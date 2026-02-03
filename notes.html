@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gabriel Ribeiro — Expository notes</title>
+
+  <style>
+    body { margin: 0; }
+
+    main{
+      max-width: 980px;
+      margin: 40px auto;
+      padding: 0 18px;
+    }
+
+    body{
+      font-family: "Palatino Linotype", Palatino, "Book Antiqua", "URW Palladio L", Georgia, serif;
+      line-height: 1.5;
+    }
+
+    table.top { border-collapse: collapse; margin: 0; }
+    td { vertical-align: top; }
+
+    img.portrait{
+      width: 260px;
+      height: 260px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .sc{
+      font-variant-caps: small-caps;
+      letter-spacing: 0.02em;
+    }
+
+    h1{
+      font-size: 44px;
+      font-weight: 500;
+      margin: 0 0 14px 0;
+    }
+
+    h2{
+      font-size: 34px;
+      font-weight: 500;
+      margin: 44px 0 10px 0;
+    }
+
+    h3{
+      font-size: 24px;
+      font-weight: 500;
+      margin: 26px 0 8px 0;
+    }
+
+    p.big { font-size: 20px; margin: 0 0 12px 0; }
+    p.link { font-size: 20px; margin: 0 0 10px 0; }
+
+    p.bio{
+      font-size: 18px;
+      margin: 18px 0 0 0;
+      max-width: 980px;
+    }
+
+    ul.items{
+      font-size: 18px;
+      line-height: 1.45;
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    /* Space between notes */
+    ul.items li { margin: 0 0 18px 0; }
+    ul.items li:last-child { margin-bottom: 0; }
+
+    .item-desc { margin: 8px 0 0 0; }
+
+    a, a:visited { color: rgb(184,115,51); }
+    a:hover, a:active { color: rgb(184,115,51); }
+
+    p.bio,
+    ul.items li p.item-desc{
+      text-align: justify;
+      hyphens: auto;
+    }
+
+    @media (max-width: 720px){
+      table.top, tbody, tr, td { display: block; }
+      td.right { padding-left: 0 !important; margin-top: 16px; }
+      img.portrait { width: 220px; height: 220px; }
+    }
+  </style>
+
+  <script>
+    MathJax = {
+      tex: { inlineMath: {'[+]': [['$', '$']]} }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+<main>
+
+  <table class="top">
+    <tr>
+      <td>
+        <img class="portrait" src="photo.jpg" alt="Gabriel Ribeiro" />
+      </td>
+
+      <td class="right" style="padding-left: 26px;">
+        <h1 class="sc">Gabriel Ribeiro</h1>
+
+        <p class="link">
+          <a href="index.html">Home</a> · <a href="analog.html">Photography</a>
+        </p>
+
+      </td>
+    </tr>
+  </table>
+
+  <p class="bio">
+    Here are some notes I wrote during my undergraduate and master's studies. I am sharing them in the hope they might be useful to others.
+  </p>
+
+  <h2 class="sc">Expository notes</h2>
+
+  <ul class="items">
+    <li>
+      <a href="notes/exponentialsums.pdf">Exponential sums: a walk through number theory</a>. (2022)
+      <p class="item-desc">
+        Here I explain what exponential sums are, how they arise naturally in number theory, and why $\ell$-adic cohomology is a powerful tool for studying them. Some familiarity with algebraic geometry may be helpful, but no knowledge of étale cohomology is assumed.
+      </p>
+    </li>
+
+    <li>
+      <a href="notes/hodge.pdf">The Hodge decomposition</a>. (2022)
+      <p class="item-desc">
+        The Hodge decomposition is an direct consequence of a fundamental theorem on elliptic differential operators, that is often used as a black box. The purpose of these notes is to unpack that theorem and present a surprisingly elegant proof.
+      </p>
+    </li>
+
+    <li>
+      <a href="notes/adjoints.pdf">Adjoints can be defined on objects</a>. (2022)
+      <p class="item-desc">
+        These notes present a perhaps underappreciated consequence of the Yoneda lemma: adjoint functors can be defined on objects. We then use this to show that resolutions in homological algebra can be chosen functorially, a fundamental fact often neglected in standard expositions.
+      </p>
+    </li>
+
+    <li>
+      <a href="notes/HA.pdf">Homological algebra</a>. (2021)
+      <p class="item-desc">
+        I wrote these notes while first learning homological algebra. They don't go very far, but they reflect an approach I still rarely see: abelian categories are developed abstractly (without elements), and derived categories are introduced from the outset rather than as a secondary approach.
+      </p>
+    </li>
+
+    <li>
+      <a href="notes/wedderburn.pdf">Wedderburn's little theorem</a>. (2021)
+      <p class="item-desc">
+        In these notes, we present a beautiful proof of the Chevalley–Warning theorem. As an application, we deduce Wedderburn's little theorem: every finite division ring is commutative.
+      </p>
+    </li>
+
+    <li>
+      <a href="notes/MZ.pdf">Masur–Veech volumes of the moduli space of abelian differentials</a>. (2019, in french)
+      <p class="item-desc">
+        This is an undergraduate report, written under the supervision of <a href="http://carlos.matheus.perso.math.cnrs.fr">Carlos Matheus Silva Santos</a>, on Masur–Veech volumes. Its goal is to provide an accessible introduction to Eskin–Okounkov's groundbreaking <i>Inventiones</i> paper "<a href="https://doi.org/10.1007/s002220100142">Asymptotics of numbers of branched coverings of a torus and volumes of moduli spaces of holomorphic differentials</a>".
+      </p>
+    </li>
+  </ul>
+
+</main>
+</body>
+</html>

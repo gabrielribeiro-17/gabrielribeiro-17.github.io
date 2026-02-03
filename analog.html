@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gabriel Ribeiro — Analog photography</title>
+
+  <style>
+    body { margin: 0; }
+
+    main{
+      max-width: 980px;
+      margin: 40px auto;
+      padding: 0 18px;
+    }
+
+    body{
+      font-family: "Palatino Linotype", Palatino, "Book Antiqua", "URW Palladio L", Georgia, serif;
+      line-height: 1.5;
+    }
+
+    table.top { border-collapse: collapse; margin: 0; }
+    td { vertical-align: top; }
+
+    img.portrait{
+      width: 260px;
+      height: 260px;      /* square */
+      object-fit: cover;
+      display: block;
+    }
+
+    .sc{
+      font-variant-caps: small-caps;
+      letter-spacing: 0.02em;
+    }
+
+    h1{
+      font-size: 44px;
+      font-weight: 500;
+      margin: 0 0 14px 0;
+    }
+
+    h2{
+      font-size: 34px;
+      font-weight: 500;
+      margin: 44px 0 10px 0;
+    }
+
+    p.link { font-size: 20px; margin: 0 0 10px 0; }
+
+    p.bio{
+      font-size: 18px;
+      margin: 18px 0 0 0;
+      max-width: 980px;
+      text-align: justify;
+      hyphens: auto;
+    }
+
+    a, a:visited { color: rgb(184,115,51); }
+    a:hover, a:active { color: rgb(184,115,51); }
+
+    /* Portfolio: larger thumbnails + masonry packing (reduces gaps) */
+    .gallery{
+      margin-top: 18px;
+      column-count: 2;
+      column-gap: 14px;
+    }
+
+    .gallery a{
+      display: block;
+      margin: 0 0 14px 0;
+      break-inside: avoid;
+      -webkit-column-break-inside: avoid;
+
+      /* remove “blue borders” / outlines around linked images */
+      text-decoration: none;
+      border: 0;
+      outline: 0;
+    }
+
+    .gallery a:focus,
+    .gallery a:focus-visible{
+      outline: none;
+    }
+
+    .gallery img{
+      width: 100%;
+      height: auto;
+      display: block;
+      border: 0;
+    }
+
+    /* Lightbox */
+    #lightbox{
+      border: none;
+      padding: 0;
+      background: transparent;
+      max-width: none;
+      max-height: none;
+    }
+
+    #lightbox::backdrop{
+      background: rgba(0,0,0,0.85);
+    }
+
+    #lightbox img{
+      max-width: min(96vw, 1400px);
+      max-height: 92vh;
+      display: block;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 700px){
+      .gallery{ column-count: 1; }
+    }
+
+    @media (max-width: 720px){
+      table.top, tbody, tr, td { display: block; }
+      td.right { padding-left: 0 !important; margin-top: 16px; }
+      img.portrait { width: 220px; height: 220px; }
+    }
+  </style>
+</head>
+
+<body>
+<main>
+
+  <table class="top">
+    <tr>
+      <td>
+        <img class="portrait" src="photo.jpg" alt="Gabriel Ribeiro" />
+      </td>
+
+      <td class="right" style="padding-left: 26px;">
+        <h1 class="sc">Gabriel Ribeiro</h1>
+
+        <p class="link">
+          <a href="index.html">Home</a> · <a href="notes.html">Expository notes</a>
+        </p>
+
+      </td>
+    </tr>
+  </table>
+
+  <p class="bio">
+    I am passionate about film photography. These photographs are small fragments from my travels, often captured with my trusty Leica M3. Presented just as they came off the film, with no digital editing.
+  </p>
+
+  <h2><span class="sc">Portfolio</span></h2>
+
+  <div class="gallery">
+    <a href="film/0008-26a.jpg"><img src="film/0008-26a.jpg" alt="" loading="lazy" decoding="async" /></a>
+    <a href="film/0033-2.jpg"><img src="film/0033-2.jpg" alt="" loading="lazy" decoding="async" /></a>
+    <a href="film/photo08-12.jpg"><img src="film/photo08-12.jpg" alt="" loading="lazy" decoding="async" /></a>
+    <a href="film/photo09-14.jpg"><img src="film/photo09-14.jpg" alt="" loading="lazy" decoding="async" /></a>
+    <a href="film/photo16-21.jpg"><img src="film/photo16-21.jpg" alt="" loading="lazy" decoding="async" /></a>
+    <a href="film/photo17-22.jpg"><img src="film/photo17-22.jpg" alt="" loading="lazy" decoding="async" /></a>
+    <a href="film/photo21-26.jpg"><img src="film/photo21-26.jpg" alt="" loading="lazy" decoding="async" /></a>
+    <a href="film/photo23-23.jpg"><img src="film/photo23-23.jpg" alt="" loading="lazy" decoding="async" /></a>
+    <a href="film/photo25-25.jpg"><img src="film/photo25-25.jpg" alt="" loading="lazy" decoding="async" /></a>
+    <a href="film/photo26-29.jpg"><img src="film/photo26-29.jpg" alt="" loading="lazy" decoding="async" /></a>
+    <a href="film/photo29-32.jpg"><img src="film/photo29-32.jpg" alt="" loading="lazy" decoding="async" /></a>
+  </div>
+
+  <dialog id="lightbox">
+    <img id="lightbox-img" alt="" />
+  </dialog>
+
+</main>
+
+<script>
+  const dialog = document.getElementById('lightbox');
+  const dialogImg = document.getElementById('lightbox-img');
+
+  document.querySelectorAll('.gallery a').forEach(a => {
+    a.addEventListener('click', (e) => {
+      e.preventDefault();
+      dialogImg.src = a.getAttribute('href');
+      dialog.showModal();
+    });
+  });
+
+  // Close on click outside the image
+  dialog.addEventListener('click', (e) => {
+    const r = dialogImg.getBoundingClientRect();
+    const clickedOnImage =
+      e.clientX >= r.left && e.clientX <= r.right &&
+      e.clientY >= r.top  && e.clientY <= r.bottom;
+    if (!clickedOnImage) dialog.close();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && dialog.open) dialog.close();
+  });
+</script>
+
+</body>
+</html>

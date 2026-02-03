@@ -4,99 +4,214 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Gabriel Ribeiro</title>
+
   <style>
-    :root { --w: 820px; }
     body { margin: 0; }
-    main { max-width: var(--w); margin: 42px auto; padding: 0 18px; line-height: 1.5; }
-    h1 { margin: 0 0 8px 0; font-size: 2rem; }
-    h2 { margin: 28px 0 8px 0; font-size: 1.35rem; }
-    h3 { margin: 18px 0 6px 0; font-size: 1.05rem; }
-    ul { padding-left: 18px; margin: 10px 0; }
-    .meta { margin: 0 0 10px 0; opacity: 0.85; }
-    .paper { margin: 0 0 14px 0; }
-    .links a { margin-right: 10px; white-space: nowrap; }
-    details { margin-top: 6px; }
-    details summary { cursor: pointer; }
-    .small { font-size: 0.95rem; opacity: 0.9; }
-    hr { border: none; border-top: 1px solid #ddd; margin: 18px 0; }
+
+    /* Center the whole page block, but keep content left-aligned inside it */
+    main{
+      max-width: 980px;
+      margin: 40px auto;
+      padding: 0 18px;
+    }
+
+    /* Palatino-ish serif stack (no external fonts needed) */
+    body{
+      font-family: "Palatino Linotype", Palatino, "Book Antiqua", "URW Palladio L", Georgia, serif;
+      line-height: 1.5;
+    }
+
+    table.top { border-collapse: collapse; margin: 0; }
+    td { vertical-align: top; }
+
+    img.portrait{
+      width: 260px;
+      height: 260px;      /* square */
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Small-caps utility (non-bold by design; headings control weight separately) */
+    .sc{
+      font-variant-caps: small-caps;
+      letter-spacing: 0.02em;
+    }
+
+    /* Headings: small caps without boldface */
+    h1{
+      font-size: 44px;
+      font-weight: 500;
+      margin: 0 0 14px 0;
+    }
+
+    h2{
+      font-size: 34px;
+      font-weight: 500;
+      margin: 44px 0 10px 0;
+    }
+
+    h3{
+      font-size: 24px;
+      font-weight: 500;
+      margin: 26px 0 8px 0;
+    }
+
+    p.big  { font-size: 20px; margin: 0 0 12px 0; }
+    p.link { font-size: 20px; margin: 0 0 10px 0; }
+
+    p.bio{
+      font-size: 18px;
+      margin: 18px 0 0 0;
+      max-width: 980px;
+    }
+
+    ul.pubs{
+      font-size: 18px;
+      line-height: 1.45;
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    /* Space between papers */
+    ul.pubs li { margin: 0 0 18px 0; }
+    ul.pubs li:last-child { margin-bottom: 0; }
+
+    /* Abstract paragraphs: consistent styling */
+    .paper-abs { margin: 8px 0 0 0; }
+
+    /* Copper links */
+    a, a:visited { color: rgb(184,115,51); }
+    a:hover, a:active { color: rgb(184,115,51); }
+
+    /* Consistent right margin via justification */
+    p.bio,
+    ul.pubs li p.paper-abs{
+      text-align: justify;
+      hyphens: auto;
+    }
+
+    /* Keep the parenthetical arXiv link visually lighter and not in small caps */
+    .smallnote{
+      font-size: 0.75em;
+      font-variant-caps: normal;
+      letter-spacing: 0;
+    }
+
+    @media (max-width: 720px){
+      table.top, tbody, tr, td { display: block; }
+      td.right { padding-left: 0 !important; margin-top: 16px; }
+      img.portrait { width: 220px; height: 220px; }
+    }
   </style>
+
+  <script>
+    MathJax = {
+      tex: { inlineMath: {'[+]': [['$', '$']]} }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
 </head>
+
 <body>
 <main>
 
-  <h1>Gabriel Ribeiro</h1>
-  <p class="meta">Mathematics — ETH Zürich</p>
+  <table class="top">
+    <tr>
+      <td>
+        <img class="portrait" src="photo.jpg" alt="Gabriel Ribeiro" />
+      </td>
 
-  <ul>
-    <li>Email: gabriel.ribeiro at polytechnique.edu</li>
-    <!-- Add these if you want -->
-    <!-- <li><a href="cv.pdf">CV (PDF)</a></li> -->
-    <!-- <li><a href="https://arxiv.org/search/?searchtype=author&query=Ribeiro%2C+G">arXiv</a></li> -->
-    <!-- <li><a href="https://scholar.google.com/">Google Scholar</a></li> -->
-  </ul>
+      <td class="right" style="padding-left: 26px;">
+        <h1 class="sc">Gabriel Ribeiro</h1>
 
-  <p>
-    I work mainly in algebraic geometry, with interests around duality phenomena, moduli, and sheaf-theoretic methods.
+        <p class="big">
+          Email:
+          <a href="mailto:gribeiro@ethz.ch">gribeiro@ethz.ch</a>
+        </p>
+
+        <p class="link">
+          <a href="notes.html">Expository notes</a>
+        </p>
+
+        <p class="link">
+          <a href="analog.html">Analog photography</a>
+        </p>
+
+      </td>
+    </tr>
+  </table>
+
+  <p class="bio">
+    I am a postdoctoral researcher at ETH Zürich working with
+    <a href="https://people.math.ethz.ch/~kowalski/">Emmanuel Kowalski</a>.
+    My research lies at the interface of algebraic geometry and number theory, with a focus on étale and
+    de Rham cohomology and their applications to character sums in analytic number theory. I am also
+    interested in bringing tools from homotopy theory into these questions.
   </p>
 
-  <h2>Publications &amp; Preprints</h2>
+  <h2>
+    <span class="sc">Publications &amp; Preprints</span>
+    <span class="smallnote">(<a href="https://arxiv.org/search/advanced?advanced=&terms-0-operator=AND&terms-0-term=Ribeiro%2C+Gabriel&terms-0-field=author&classification-mathematics=y&classification-physics_archives=all&classification-include_cross_list=include&date-filter_by=all_dates&date-year=&date-from_date=&date-to_date=&date-date_type=submitted_date&abstracts=show&size=50&order=-announced_date_first">arXiv</a>)</span>
+  </h2>
 
-  <h3>Algebraic Geometry</h3>
-
-  <div class="paper">
-    <div><strong>A moduli space of character sheaves</strong> <span class="small">(preprint; arXiv link forthcoming)</span></div>
-    <div class="links">
-      <!-- When you upload: replace # with the arXiv and PDF links -->
-      <a href="#" title="Add arXiv link once posted">arXiv</a>
-      <a href="#" title="Add a PDF link (e.g. papers/character-sheaves.pdf)">PDF</a>
-    </div>
-    <details>
-      <summary>Abstract</summary>
-      <p class="small">
-        We study <em>character sheaves</em> on a commutative connected algebraic group <em>G</em>:
-        line bundles with flat connection (<em>𝓛</em>,∇) satisfying a multiplicativity isomorphism
-        m<sup>*</sup>(<em>𝓛</em>,∇) ≃ (<em>𝓛</em>,∇) ⊠ (<em>𝓛</em>,∇), where m: G×G→G is the group law.
-        We construct a group algebraic space G<sup>♭</sup> whose points parametrize such character sheaves,
-        and we analyze its geometry. The main technical ingredient is a study of extension sheaves on the de Rham space
-        G<sub>dR</sub>. An appendix provides self-contained, elementary proofs of basic results on de Rham spaces that may be of
+  <h3 class="sc">Algebraic Geometry &amp; Number Theory</h3>
+  <ul class="pubs">
+    <li>
+      <a href="papers/moduli.pdf">A moduli space of character sheaves</a>.
+      (<a href="https://arxiv.org/abs/2506.17393">arXiv version</a>, 2026)
+      <p class="paper-abs">
+        In this paper, I study character sheaves on a commutative connected algebraic group \(G\):
+        line bundles with flat connection \((\mathscr L,\nabla)\) satisfying a multiplicativity isomorphism
+        \(m^*(\mathscr L,\nabla) \simeq (\mathscr L,\nabla) \boxtimes (\mathscr L,\nabla)\), where
+        \(m\colon G\times G\to G\) is the group law. I construct a group algebraic space \(G^\flat\)
+        whose points parametrize such character sheaves, and analyze its geometry. The main technical
+        ingredient is a study of extension sheaves on the de Rham space \(G_\text{dR}\). An appendix
+        provides self-contained, elementary proofs of basic results on de Rham spaces that may be of
         independent interest.
       </p>
-    </details>
-  </div>
+    </li>
 
-  <div class="paper">
-    <div><strong>Extensions of Abelian Schemes and the Additive Group</strong> (with Zev Rosengarten)</div>
-    <div class="links">
-      <a href="https://arxiv.org/abs/2506.17393">arXiv</a>
-      <a href="https://arxiv.org/pdf/2506.17393">PDF</a>
-    </div>
-    <div class="small">
-      Extension sheaves in the fppf topology; includes a streamlined Barsotti–Weil formula and vanishing results for certain Ext-sheaves.
-    </div>
-  </div>
+    <li>
+      <a href="papers/extensions.pdf">Extensions of abelian schemes and the additive group</a>.
+      (<a href="https://arxiv.org/abs/2506.17393">arXiv version</a>, 2025, joint with
+      <a href="https://sites.google.com/view/zevrosengarten">Zev Rosengarten</a>)
+      <p class="paper-abs">
+        In this paper, we compute extension sheaves of abelian schemes and of the additive group by the
+        multiplicative group in the fppf topology. Our main results include a generalized and streamlined
+        proof of the Barsotti–Weil formula, the vanishing of
+        \(\underline{\operatorname{Ext}}^2(A,\mathbb{G}_m)\) for an abelian scheme \(A\) over a general base,
+        and a description of \(\underline{\operatorname{Ext}}^1(\mathbb{G}_a,\mathbb{G}_m)\) in characteristic
+        zero.
+      </p>
+    </li>
+  </ul>
 
-  <h3>Other</h3>
+  <h3 class="sc">Other</h3>
+  <ul class="pubs">
+    <li>
+      <a href="papers/IMPB.pdf">IMProofBench: Benchmarking AI on Research-Level Mathematical Proof Generation</a>.
+      (<a href="https://arxiv.org/abs/2509.26076">arXiv version</a>, 2025, joint with
+      <a href="https://johannesschmitt.gitlab.io">Johannes Schmitt</a> et al.)
+      <p class="paper-abs">
+        I contributed research-level problems to IMProofBench, a private benchmark of 39 peer-reviewed proof tasks,
+        each paired with automatically gradable subquestions. It evaluates tool-augmented LLMs in a workflow closer
+        to real research (e.g. literature search and computer algebra), finding that models handle some accessible
+        problems but still struggle on the hardest ones; Grok-4 leads on final-answer subquestions (52% accuracy),
+        while GPT-5 is strongest on giving complete proofs (22% fully correct).
+      </p>
+    </li>
 
-  <div class="paper">
-    <div><strong>IMProofBench: Benchmarking AI on Research-Level Mathematical Proof Generation</strong> (with J. Schmitt et al.)</div>
-    <div class="links">
-      <a href="https://arxiv.org/abs/2509.26076">arXiv</a>
-      <a href="https://arxiv.org/pdf/2509.26076">PDF</a>
-    </div>
-    <div class="small">
-      Introduces a benchmark of research-level problems designed to evaluate proof generation and related capabilities of LLM-based systems.
-    </div>
-  </div>
-
-  <div class="paper">
-    <div><strong>Análise de nanocompósitos de polietileno de ultra-alto peso molecular com carbeto de boro</strong></div>
-    <div class="small">
-      Materials Science; journal from the Brazilian Army. <span class="small">(Add journal name/volume/pages/DOI and a link if you have one.)</span>
-    </div>
-  </div>
-
-  <hr />
-  <p class="small">Last updated: January 2026</p>
+    <li>
+      <a href="papers/analise.pdf">Análise de nanocompósitos de polietileno de ultra alto peso molecular com carbeto de boro</a>.
+      (<a href="https://rmct.ime.eb.br/arquivos/revistas/RMCT_ed_especial_web_2017.pdf">Published version</a>, 2017, joint with
+      <a href="http://aquarius.ime.eb.br/~debiasi/edio.html">Édio Junior</a> et al.)
+      <p class="paper-abs" lang="en">
+        In this article, written during my undergraduate studies, we investigated the incorporation of boron carbide into
+        polyethylene nanocomposites with the aim of developing lighter and more resistant materials for the manufacture of
+        bulletproof vests for the Brazilian Army.
+      </p>
+    </li>
+  </ul>
 
 </main>
 </body>
