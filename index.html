@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gabriel Ribeiro</title>
+
+  <style>
+    body { margin: 0; }
+
+    /* Center the whole page block, but keep content left-aligned inside it */
+    main{
+      max-width: 980px;
+      margin: 40px auto;
+      padding: 0 18px;
+    }
+
+    /* Palatino-ish serif stack (no external fonts needed) */
+    body{
+      font-family: "Palatino Linotype", Palatino, "Book Antiqua", "URW Palladio L", Georgia, serif;
+      line-height: 1.5;
+    }
+
+    table.top { border-collapse: collapse; margin: 0; }
+    td { vertical-align: top; }
+
+    img.portrait{
+      width: 260px;
+      height: 260px;      /* square */
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Small-caps utility (non-bold by design; headings control weight separately) */
+    .sc{
+      font-variant-caps: small-caps;
+      letter-spacing: 0.02em;
+    }
+
+    /* Headings: small caps without boldface */
+    h1{
+      font-size: 44px;
+      font-weight: 500;
+      margin: 0 0 14px 0;
+    }
+
+    h2{
+      font-size: 34px;
+      font-weight: 500;
+      margin: 44px 0 10px 0;
+    }
+
+    h3{
+      font-size: 24px;
+      font-weight: 500;
+      margin: 26px 0 8px 0;
+    }
+
+    p.big  { font-size: 20px; margin: 0 0 12px 0; }
+    p.link { font-size: 20px; margin: 0 0 10px 0; }
+
+    p.bio{
+      font-size: 18px;
+      margin: 18px 0 0 0;
+      max-width: 980px;
+    }
+
+    ul.pubs{
+      font-size: 18px;
+      line-height: 1.45;
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    /* Space between papers */
+    ul.pubs li { margin: 0 0 18px 0; }
+    ul.pubs li:last-child { margin-bottom: 0; }
+
+    /* Abstract paragraphs: consistent styling */
+    .paper-abs { margin: 8px 0 0 0; }
+
+    /* Copper links */
+    a, a:visited { color: rgb(184,115,51); }
+    a:hover, a:active { color: rgb(184,115,51); }
+
+    /* Consistent right margin via justification */
+    p.bio,
+    ul.pubs li p.paper-abs{
+      text-align: justify;
+      hyphens: auto;
+    }
+
+    /* Keep the parenthetical arXiv link visually lighter and not in small caps */
+    .smallnote{
+      font-size: 0.75em;
+      font-variant-caps: normal;
+      letter-spacing: 0;
+    }
+
+    @media (max-width: 720px){
+      table.top, tbody, tr, td { display: block; }
+      td.right { padding-left: 0 !important; margin-top: 16px; }
+      img.portrait { width: 220px; height: 220px; }
+    }
+  </style>
+
+  <script>
+    MathJax = {
+      tex: { inlineMath: {'[+]': [['$', '$']]} }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+<main>
+
+  <table class="top">
+    <tr>
+      <td>
+        <img class="portrait" src="photo.jpg" alt="Gabriel Ribeiro" />
+      </td>
+
+      <td class="right" style="padding-left: 26px;">
+        <h1 class="sc">Gabriel Ribeiro</h1>
+
+        <p class="big">
+          Email:
+          <a href="mailto:gribeiro@ethz.ch">gribeiro@ethz.ch</a>
+        </p>
+
+        <p class="link">
+          <a href="notes.html">Expository notes</a>
+        </p>
+
+        <p class="link">
+          <a href="analog.html">Analog photography</a>
+        </p>
+
+      </td>
+    </tr>
+  </table>
+
+  <p class="bio">
+    I am a postdoctoral researcher at ETH Zürich working with
+    <a href="https://people.math.ethz.ch/~kowalski/">Emmanuel Kowalski</a>.
+    My research lies at the interface of algebraic geometry and number theory, with a focus on étale and
+    de Rham cohomology and their applications to character sums in analytic number theory. I am also
+    interested in bringing tools from homotopy theory into these questions.
+  </p>
+
+  <h2>
+    <span class="sc">Publications &amp; Preprints</span>
+    <span class="smallnote">(<a href="https://arxiv.org/search/advanced?advanced=&terms-0-operator=AND&terms-0-term=Ribeiro%2C+Gabriel&terms-0-field=author&classification-mathematics=y&classification-physics_archives=all&classification-include_cross_list=include&date-filter_by=all_dates&date-year=&date-from_date=&date-to_date=&date-date_type=submitted_date&abstracts=show&size=50&order=-announced_date_first">arXiv</a>)</span>
+  </h2>
+
+  <h3 class="sc">Algebraic Geometry &amp; Number Theory</h3>
+  <ul class="pubs">
+    <li>
+      <a href="papers/presentability.pdf">Presentability of categories of localizations and analytic rings</a>.
+      (<a href="https://arxiv.org/abs/2610.22494">arXiv version</a>, 2026, joint with Wern Juin Gabriel Ong.)
+      <p class="paper-abs">
+        We prove that certain categories of Bousfield localizations are presentable and give explicit
+        regular cardinals \(\kappa\) for which they are \(\kappa\)-presentable. As an application,
+        we show that the category of analytic rings in the sense of Clausen and Scholze is
+        \((2^{\aleph_0})^+\)-presentable.
+      </p>
+    </li>
+
+    <li>
+      <a href="papers/moduli.pdf">A moduli space of character sheaves</a>.
+      (<a href="https://arxiv.org/abs/2602.02664">arXiv version</a>, 2026.)
+      <p class="paper-abs">
+        In this paper, I study character sheaves on a commutative connected algebraic group \(G\):
+        line bundles with flat connection \((\mathscr L,\nabla)\) satisfying a multiplicativity isomorphism
+        \(m^*(\mathscr L,\nabla) \simeq (\mathscr L,\nabla) \boxtimes (\mathscr L,\nabla)\), where
+        \(m\colon G\times G\to G\) is the group law. I construct a group algebraic space \(G^\flat\)
+        whose points parametrize such character sheaves, and analyze its geometry. The main technical
+        ingredient is a study of extension sheaves on the de Rham space \(G_\text{dR}\). An appendix
+        provides self-contained, elementary proofs of basic results on de Rham spaces that may be of
+        independent interest.
+      </p>
+    </li>
+
+    <li>
+      <a href="papers/extensions.pdf">Extensions of abelian schemes and the additive group</a>.
+      (<a href="https://arxiv.org/abs/2506.17393">arXiv version</a>, 2025, joint with
+      <a href="https://sites.google.com/view/zevrosengarten">Zev Rosengarten</a>; to appear in
+  <em>Algebraic Geometry</em>.)
+      <p class="paper-abs">
+        In this paper, we compute extension sheaves of abelian schemes and of the additive group by the
+        multiplicative group in the fppf topology. Our main results include a generalized and streamlined
+        proof of the Barsotti–Weil formula, the vanishing of
+        \(\underline{\operatorname{Ext}}^2(A,\mathbb{G}_m)\) for an abelian scheme \(A\) over a general base,
+        and a description of \(\underline{\operatorname{Ext}}^1(\mathbb{G}_a,\mathbb{G}_m)\) in characteristic
+        zero.
+      </p>
+    </li>
+  </ul>
+
+  <h3 class="sc">PhD thesis</h3>
+  <ul class="pubs">
+    <li>
+      <a href="papers/thesis.pdf">Generic vanishing for holonomic $\mathcal{D}$-modules: a study via Cartier duality</a>.
+      (<a href="https://theses.hal.science/tel-04956621">HAL version</a>, École polytechnique, 2024,
+      supervised by Javier Fresán.)
+      <p class="paper-abs">
+        Motivated by a profound analogy between exponential sums over finite fields and analytic functions,
+        I study the de Rham cohomology of holonomic $\mathcal{D}$-modules twisted by character sheaves on
+        commutative connected algebraic groups. Using generic vanishing, I construct a tannakian quotient
+        of the category of holonomic $\mathcal{D}$-modules, with convolution as its tensor product.
+        For unipotent groups and tori, I identify the associated tannakian groups with differential and
+        difference Galois groups, respectively, in accordance with an expectation of Katz.
+      </p>
+    </li>
+  </ul>
+
+  <h3 class="sc">Other</h3>
+  <ul class="pubs">
+    <li>
+      <a href="papers/IMPB.pdf">IMProofBench: Benchmarking AI on Research-Level Mathematical Proof Generation</a>.
+      (<a href="https://arxiv.org/abs/2509.26076">arXiv version</a>, 2025, joint with
+      <a href="https://johannesschmitt.gitlab.io">Johannes Schmitt</a> et al; accepted at the <em>NeurIPS 2025 MATH-AI Workshop</em>.)
+      <p class="paper-abs">
+        I contributed research-level problems to IMProofBench, a private benchmark of 39 peer-reviewed proof tasks,
+        each paired with automatically gradable subquestions. It evaluates tool-augmented LLMs in a workflow closer
+        to real research (e.g. literature search and computer algebra), finding that models handle some accessible
+        problems but still struggle on the hardest ones; Grok-4 leads on final-answer subquestions (52% accuracy),
+        while GPT-5 is strongest on giving complete proofs (22% fully correct).
+      </p>
+    </li>
+
+    <li>
+      <a href="papers/analise.pdf">Análise de nanocompósitos de polietileno de ultra alto peso molecular com carbeto de boro</a>.
+      (<a href="https://rmct.ime.eb.br/arquivos/revistas/RMCT_ed_especial_web_2017.pdf">Published version</a>, 2017, joint with
+      <a href="http://aquarius.ime.eb.br/~debiasi/edio.html">Édio Junior</a> et al; published in <em>Revista Militar de Ciência e Tecnologia</em>.)
+      <p class="paper-abs" lang="en">
+        In this article, written during my undergraduate studies, we investigated the incorporation of boron carbide into
+        polyethylene nanocomposites with the aim of developing lighter and more resistant materials for the manufacture of
+        bulletproof vests for the Brazilian Army.
+      </p>
+    </li>
+  </ul>
+
+</main>
+</body>
+</html>
